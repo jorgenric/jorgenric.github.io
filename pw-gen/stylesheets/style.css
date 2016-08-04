@@ -1,0 +1,46 @@
+
+#pw_gen_container{
+    width: 400px;
+    border : solid 1px black;
+    padding : 6px;
+}
+
+#top_nav{
+    margin-bottom : 10px;   
+}
+
+#top_nav a{
+    margin-right : 10px;    
+}
+
+#pw_sentence_input{
+    width: 100%;
+}
+
+table, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align : center;
+    padding : 2px;
+}
+
+input {
+    margin-top : 2px;
+    margin-bottom : 2px;
+    
+}
+
+.showHide{
+    font-weight: bold;
+    color : blue;
+}
+
+.showHide:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.highlight{
+    font-style: italic;
+    font
+}

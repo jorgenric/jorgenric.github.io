@@ -1,0 +1,25 @@
+<div ng-controller="pwGenController">  
+    <div>
+        <label>
+            <input type="checkbox" ng-model="capitalizePostSwap" />
+            Add post replacement capitalization
+        </label>
+    </div>
+    <div>
+        <input id="pw_sentence_input" type="text" ng-model="pwSentence" ng-keydown="generatePw(pwSentence)"/>
+        <div id="pw_sentence_btns">
+            <input type="button" value="Submit" ng-click="generatePw(pwSentence)" />
+            <input type="button" value="clear" ng-click="clearPwForm()" />
+        </div>
+        <div>
+            <div>
+                <span>Generated password: </span>
+                <span>{{outputPw}}</span>
+            </div>
+            <div>
+                <span>Input sentence: </span>
+                <span>{{pwSentence}}</span>
+            </div>
+        </div>    
+    </div>
+</div>
