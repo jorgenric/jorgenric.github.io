@@ -24,10 +24,18 @@ table, th, tr, td {
     padding : 2px;
 }
 
+.inlineInfo{
+    margin-top:3px;
+    margin-bottom:3px;
+}
+
+.pwLabel{
+    font-weight: bold;   
+}
+
 input {
     margin-top : 2px;
     margin-bottom : 2px;
-    
 }
 
 .showHide{
