@@ -4,15 +4,15 @@ var pwGen = angular.module("passwordGenerator",["ngRoute"]);
 pwGen.config(function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl:"/views/homeView.html",
+            templateUrl:"./views/homeView.html",
             controller : "homeController"
         })
         .when('/pw-gen',{
-            templateUrl : "/views/pwGenView.html",
+            templateUrl : "./views/pwGenView.html",
             controller : "pwGenController"
         })
         .when('/error',{
-            templateUrl : "/views/error.html"
+            templateUrl : "./views/error.html"
         })
         .otherwise({redirectTo : "/error"});
 });
