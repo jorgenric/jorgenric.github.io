@@ -23,7 +23,7 @@
         
          var checkForTrailingSpecialChars = function(word,charMapObj){
              var specialChar = "";
-             var lastChar = word[word.length-1];
+             var lastChar = word[word.length-1].toLowerCase();
              if(charMapObj[lastChar] == undefined){
                  specialChar = lastChar;
              }
@@ -53,7 +53,7 @@
                 }
                 
                 var trailingSpecialChar = checkForTrailingSpecialChars(word, charMapObj);
-                password += pwLetter + trailingSpecialChar;
+                password += (pwLetter + trailingSpecialChar);
                 
             }
             return password; 

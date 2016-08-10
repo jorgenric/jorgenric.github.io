@@ -44,7 +44,19 @@ describe("pw generator", function(){
             var controller = $controller('pwGenController', {$scope : $scope});
             $scope.generatePw(pwSentence);
             expect($scope.outputPw).toEqual("48!Cd3");
-        });          
+        });
+        
+        it("should not interpret capitalized letters as special characters", function(){
+
+            var pwSentence = "what if I add! a new sentence";
+            var $scope = {};
+            var controller = $controller('pwGenController', {$scope : $scope});
+            $scope.generatePw(pwSentence);
+            expect($scope.outputPw).toEqual("w114!4N5");
+        });
+        
+        
+                  
    });
 
    
