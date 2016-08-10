@@ -7,9 +7,33 @@
     
     var pwGenService = function(){
         
+         var cleansePwInput = function(pwSentence){
+             var cleansed = [];
+             var wordArr = pwSentence.split(' ');
+             
+             for(var i = 0; i < wordArr.length; i++){
+                 var word = wordArr[i];
+                 if(word != ""){
+                     cleansed.push(word);
+                 };
+             }
+             
+             return cleansed;
+         } 
+        
+         var checkForTrailingSpecialChars = function(word,charMapObj){
+             var specialChar = "";
+             var lastChar = word[word.length-1];
+             if(charMapObj[lastChar] == undefined){
+                 specialChar = lastChar;
+             }
+             
+             return specialChar;
+         }
+        
          var generatePw = function(pwSentence, charMapObj, capitalizePostSwap){
         
-            var wordArr = pwSentence.split(' ');
+            var wordArr = cleansePwInput(pwSentence);
             var capitalizeNextLetter = false;
             
             var password = "";
@@ -28,7 +52,9 @@
                     capitalizeNextLetter = false;
                 }
                 
-                password += pwLetter;
+                var trailingSpecialChar = checkForTrailingSpecialChars(word, charMapObj);
+                password += pwLetter + trailingSpecialChar;
+                
             }
             return password; 
         };    

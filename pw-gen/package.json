@@ -1,0 +1,16 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "description": "tool to help manage passwords by using strings of words rather than more randomized password strings as input to generate secure password strings",
+  "main": "index.html",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "author": "Eric Jorgenson",
+  "license": "ISC",  
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2"
+  }
+}
