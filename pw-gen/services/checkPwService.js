@@ -19,7 +19,8 @@
         
         var check = function(password){
             var strength;
-            var apiPath = "https://www.google.com/accounts/RatePassword?Passwd=" + password;
+            //var apiPath = "https://www.google.com/accounts/RatePassword?Passwd=" + password;
+            var apiPath = "https://api.github.com/users";
             /*
             if(password == null || password == undefined || password == ""){
                 strength = "";
@@ -27,7 +28,7 @@
                 strength = $http.get(apiPath).then(successResponse, errorResponse);
             }
             */
-            return $http.post(apiPath);
+            return $http.get(apiPath);
         }
         
         return {
