@@ -26,6 +26,9 @@
         var getPwRankLocal = function(password){
             var passwordStr;
             var passLen = password.length;
+            var hasNumber = /\d/;
+            var containsNum = hasNumber.test(password);
+            
             if(passLen < 5){
                 passwordStr = 0
             }else if(passLen >= 5 && passLen < 8){
@@ -34,6 +37,9 @@
                 passwordStr = 2
             }else {
                 passwordStr = 3
+            }
+            if(containsNum){
+                passwordStr += 1;
             }
             return passwordStr;
         }
@@ -46,12 +52,13 @@
             }else if(passwordStr == 2){
                 strengthMsg = "Maybe you wont get hacked";
             }else if(passwordStr == 3){
-                strengthMsg = "Nothing to be embarassed about";
+                strengthMsg = "Yeah, that's pretty good";
             }else if(passwordStr == 4){
-                strengthMsg = "Solid! Nice work.";
+                strengthMsg = "Brute force will have to be quite brute";
             }else{
                 strengthMsg = "Hmmm, getting a weird value... not sure";   
             }
+        
             return strengthMsg; 
         }
         
