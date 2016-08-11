@@ -27,7 +27,7 @@
                 strength = $http.get(apiPath).then(successResponse, errorResponse);
             }
             */
-            return $http.get(apiPath);
+            return $http.post(apiPath);
         }
         
         return {
