@@ -33,7 +33,7 @@
             var strengthMsg = "";
             if(passwordStr == 0){
                 strengthMsg = "Well, it's better than 'password'";
-            }if(passwordStr == 1){
+            }else if(passwordStr == 1){
                 strengthMsg = "Gotta say, pretty weak";
             }else if(passwordStr == 2){
                 strengthMsg = "Maybe you wont get hacked";
