@@ -18,6 +18,7 @@ module.exports = function(config) {
         './libraries/angular.js',
         './mainModule.js',
         './controllers/pwGenController.js',
+        "./services/checkPwService.js",
         './services/pwGenService.js',
         './libraries/angular-route.js',
         './libraries/angular-mocks.js',

@@ -4,10 +4,14 @@
     
     var pwGenModule = angular.module("passwordGenerator");
     
-    function pwGenController($scope, CHAR_MAPPING_OBJ, pwGenService){
+    function pwGenController($scope, CHAR_MAPPING_OBJ, checkPwService, pwGenService){
         
            $scope.generatePw = function(pwSentence){
-               $scope.outputPw = pwGenService.generatePw(pwSentence, CHAR_MAPPING_OBJ, $scope.capitalizePostSwap);
+               var generatedPw = "";
+               generatedPw = pwGenService.generatePw(pwSentence, CHAR_MAPPING_OBJ, $scope.capitalizePostSwap);
+               $scope.pwStrength = checkPwService.check(generatedPw);
+               $scope.outputPw = generatedPw;
+               
            };
            
            $scope.clearPwForm = function(){
@@ -16,10 +20,11 @@
                 $scope.capitalizePostSwap = true;    
            }
            
+           $scope.pwStrength = "";
            $scope.outputPw = "";
            $scope.pwSentence = "this is a default password which I entered as an example";
            $scope.capitalizePostSwap = true;
     }    
     
-    pwGenModule.controller("pwGenController", ["$scope", "CHAR_MAPPING_OBJ", "pwGenService", pwGenController] );
+    pwGenModule.controller("pwGenController", ["$scope", "CHAR_MAPPING_OBJ", "checkPwService", "pwGenService", pwGenController] );
 }());

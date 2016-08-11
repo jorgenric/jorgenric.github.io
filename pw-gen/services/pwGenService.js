@@ -26,8 +26,7 @@
              var lastChar = word[word.length-1].toLowerCase();
              if(charMapObj[lastChar] == undefined){
                  specialChar = lastChar;
-             }
-             
+             }             
              return specialChar;
          }
         
