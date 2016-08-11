@@ -5,15 +5,11 @@
     var pwGenModule = angular.module("passwordGenerator");
     
     function pwGenController($scope, CHAR_MAPPING_OBJ, checkPwService, pwGenService){
-           
-        var onPwCheckResponse = function(response){
-            $scope.pwStrength = response.data;
-        }
         
         $scope.generatePw = function(pwSentence){
             var generatedPw = "";
             generatedPw = pwGenService.generatePw(pwSentence, CHAR_MAPPING_OBJ, $scope.capitalizePostSwap);
-            checkPwService.check(generatedPw).then(onPwCheckResponse, onPwCheckResponse);
+            $scope.pwStrength = checkPwService.check(generatedPw);
             $scope.outputPw = generatedPw;
             
         };
