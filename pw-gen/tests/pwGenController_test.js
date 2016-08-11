@@ -1,4 +1,4 @@
-describe("pw generator", function(){
+describe("passwordGenerator", function(){
    
  
    beforeEach(module('passwordGenerator'));
@@ -54,11 +54,23 @@ describe("pw generator", function(){
             $scope.generatePw(pwSentence);
             expect($scope.outputPw).toEqual("w114!4N5");
         });
-        
-        
                   
    });
-
+   /*
+   describe("$scope.pwStrength", function(){
+        
+        it("should be empty str if input is nothing", function(){
+            
+            var $scope = {};
+            var pwSentence = "";
+            var controller = $controller('pwGenController', {$scope : $scope});
+            $scope.generatePw(pwSentence);
+            expect($scope.pwStrength).toEqual("");
+            
+        });
+                  
+    });
+    */   
    
 });
             

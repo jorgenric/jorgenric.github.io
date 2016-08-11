@@ -5,13 +5,29 @@
     
     var pwGenModule = angular.module("passwordGenerator");
     
-    //https://www.google.com/accounts/RatePassword?Passwd=w
+    //
     
-    var checkPwService = function(){
+    var checkPwService = function($http){
+        
+        var errorResponse = function(response){
+            return response.data || "Request Failed";
+        }
+        
+        var successResponse = function(response){
+            return response.data;
+        }
         
         var check = function(password){
-            return 'STRONG';
-            
+            var strength;
+            var apiPath = "https://www.google.com/accounts/RatePassword?Passwd=" + password;
+            /*
+            if(password == null || password == undefined || password == ""){
+                strength = "";
+            }else{
+                strength = $http.get(apiPath).then(successResponse, errorResponse);
+            }
+            */
+            return $http.get(apiPath);
         }
         
         return {
