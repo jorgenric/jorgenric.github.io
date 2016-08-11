@@ -52,6 +52,7 @@
             }else{
                 strengthMsg = "Hmmm, getting a weird value... not sure";   
             }
+            return strengthMsg; 
         }
         
         return {
