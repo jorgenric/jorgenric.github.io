@@ -6,8 +6,8 @@
     
     function pwGenController($scope, CHAR_MAPPING_OBJ, checkPwService, pwGenService){
            
-        var onPwCheckResponse = function(data){
-            $scope.pwStrength = data.slice(0,30);
+        var onPwCheckResponse = function(response){
+            $scope.pwStrength = response.data.slice(0,30);
         }
         
         $scope.generatePw = function(pwSentence){
