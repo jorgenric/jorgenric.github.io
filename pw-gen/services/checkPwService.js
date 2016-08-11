@@ -19,8 +19,7 @@
         
         var check = function(password){
             var strength;
-            //var apiPath = "https://www.google.com/accounts/RatePassword?Passwd=" + password;
-            var apiPath = "https://api.github.com/users";
+            var apiPath = "https://www.google.com/accounts/RatePassword?Passwd=" + password;
             /*
             if(password == null || password == undefined || password == ""){
                 strength = "";
