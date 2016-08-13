@@ -28,8 +28,7 @@
             return passwordStr;
         }
         
-        var check = function(password, strengthRank){
-            var passwordStr = strengthRank || getPwRankLocal(password);
+        var pwDescription = function(passwordStr){
             var strengthMsg = "";
             if(passwordStr == 0){
                 strengthMsg = "Well, it's better than 'password'";
@@ -64,7 +63,8 @@
         }
         
         return {
-            check: check
+            pwDescription: pwDescription,
+            getPwScore : getPwRankLocal
         };
     }
     

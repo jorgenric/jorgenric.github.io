@@ -8,8 +8,10 @@
         
         $scope.generatePw = function(pwSentence){
             var generatedPw = "";
+            var pwRank;
             generatedPw = pwGenService.generatePw(pwSentence, CHAR_MAPPING_OBJ, $scope.capitalizePostSwap);
-            $scope.pwStrength = checkPwService.check(generatedPw);
+            pwRank = checkPwService.getPwScore(generatedPw);
+            $scope.pwStrength = checkPwService.pwDescription(pwRank);
             $scope.outputPw = generatedPw;
             
         };
