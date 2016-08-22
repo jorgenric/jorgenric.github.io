@@ -13,7 +13,7 @@ describe("checkPwService",function(){
         }));
         
         it("should should be less than 5", inject(function(checkPwService){
-            var password = "a";
+            var password = "t14Dpw13443";
             var score = checkPwService.getPwScore(password);
             expect(score).toBeLessThan(5);
         }));
